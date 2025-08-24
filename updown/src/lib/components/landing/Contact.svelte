@@ -108,7 +108,7 @@
 </script>
 
 <section
-	class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-6 py-16"
+	class="min-h-screen px-6 py-16"
 	id="contact"
 >
 	<div class="mx-auto max-w-4xl">
