@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+:root {
+    --surfaceColor: #F2F4F6;
+    --surfacePrimaryColor: #FFFFFF;
+    --onSurface: #000000;
+    --onSurfacePrimary: #000000;
+    --borderColor: #E1E4E8;
+    --accentColor: #F79107;
+    --onAccentColor: #FFFFFF;
+}
+
+html,
+body {
+    @apply bg-[var(--surfaceColor)] text-[var(--onSurface)];
+}
+
+
+.accent {
+    @apply bg-[var(--accentColor)] text-[var(--onAccentColor)];
+}
+
