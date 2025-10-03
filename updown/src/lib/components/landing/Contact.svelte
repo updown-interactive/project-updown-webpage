@@ -107,10 +107,7 @@
 	$: maxMessageLength = 1000;
 </script>
 
-<section
-	class="min-h-screen px-6 py-16"
-	id="contact"
->
+<section class="min-h-screen px-6 py-16" id="contact">
 	<div class="mx-auto max-w-4xl">
 		<!-- Header Section -->
 		<div class="mb-16 text-center">
@@ -142,7 +139,7 @@
 					</svg>
 				</div>
 				<h3 class="mb-2 font-semibold text-gray-800">Email Us</h3>
-				<p class="text-sm text-gray-600">support@updownco.in</p>
+				<p class="text-sm text-gray-600">support@updown-interactive.in</p>
 			</div>
 
 			<div

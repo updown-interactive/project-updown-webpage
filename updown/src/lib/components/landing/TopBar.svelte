@@ -22,7 +22,7 @@
 	>
 		<!-- Logo -->
 		<button on:click={goHome} class="flex items-center transition-opacity hover:opacity-80">
-			<img src={AppPng.simpleArrowWhite} alt="logo" class="h-6 w-6" />
+			<img src={AppPng.logoUN} alt="logo" class="h-6 w-6" />
 		</button>
 
 		<!-- Desktop Nav Links -->

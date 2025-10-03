@@ -70,20 +70,22 @@
 
 <section id="about" class="min-h-screenpy-20">
 	<div class="container mx-auto px-4">
-		<!-- Section Header -->
-		<div
-			class="mb-16 text-center transition-all duration-1000 ease-out"
+		<h1
+			class="pb-16 text-left leading-tight font-extrabold tracking-tight text-gray-900 transition-all duration-1000 ease-out"
 			class:opacity-100={isVisible}
 			class:opacity-0={!isVisible}
 			class:translate-y-0={isVisible}
 			class:translate-y-12={!isVisible}
 		>
-			<h2 class="mb-4 text-5xl font-bold text-black md:text-6xl lg:text-7xl">
-				About <span class="text-black">UpDown</span>
-			</h2>
-			<div class="mx-auto h-1 w-24 bg-black"></div>
-		</div>
+			<span class="block text-6xl uppercase sm:text-7xl md:text-9xl lg:text-[6rem]">
+				In freedom, we create.
+			</span>
+			<span class="mt-4 block text-6xl uppercase sm:text-7xl md:text-9xl lg:text-[6rem]">
+				In creativity, we are free.
+			</span>
+		</h1>
 
+		
 		<!-- Main Content Grid -->
 		<div class="grid gap-12 lg:grid-cols-1 lg:gap-16">
 			<!-- Left Column - Story -->
@@ -97,18 +99,17 @@
 				<div class="space-y-6">
 					<h3 class="text-3xl font-semibold text-black">Our Story</h3>
 					<p class="text-lg leading-relaxed text-gray-700">
-						Founded with a vision to bridge the gap between ambitious ideas and digital reality,
-						UpDown has been at the forefront of software innovation. We believe that every business,
-						regardless of size, deserves access to world-class technology solutions.
+						UpDown was created for freedom and creativity—so we can build what we love. We believe
+						every business, no matter its size, should have access to world-class technology, and
+						we're here to make that possible.
 					</p>
 					<p class="text-lg leading-relaxed text-gray-700">
-						Our journey began with a simple principle: create software that doesn't just work, but
-						transforms how our clients operate and grow. Today, we continue to push boundaries,
-						exploring new technologies while maintaining our commitment to excellence.
+						Our journey began with a simple belief: software should be more than functional—it
+						should inspire freedom, spark creativity, and open new possibilities. At UpDown, we
+						don't just follow trends; we reimagine them, exploring technologies in our own way while
+						staying true to our passion for building meaningful, lasting solutions.
 					</p>
 				</div>
-
-			
 			</div>
 		</div>
 	</div>

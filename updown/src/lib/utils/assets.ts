@@ -8,4 +8,9 @@ export class AppPng {
     static mangrove = '/mangrove.png';
     static zone = '/zone.png';
     static cyber = '/cyber.png';
+    static logoU = '/logo_u.png';
+    static logoN = '/logo_n.png';
+    static logoUN = '/un_logo.png';
+    static oak = '/oak.png';
+    static whiteSheet = '/white_sheet.png';
 }

@@ -12,7 +12,7 @@
 	<TopBar />
 	<Hero />
 	<About />
-	<Services />
+	<!-- <Services /> -->
 	<Projects />
 	<Contact />
 	<Footer />

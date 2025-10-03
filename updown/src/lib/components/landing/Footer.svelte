@@ -81,12 +81,12 @@
 				<div class="space-y-6">
 					<div class="flex items-center space-x-3">
 						<!-- Company Logo -->
-						<img src={AppPng.simpleArrowWhite} alt="logo" class="h-20 w-20" />
+						<img src={AppPng.logoUN} alt="logo" class="h-20 w-20" />
 						<div>
 							<h3
 								class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-2xl font-bold text-transparent"
 							>
-								Updown Co
+								Updown Interactive
 							</h3>
 							<p class="text-sm text-slate-400">Elevating Your Digital Presence</p>
 						</div>
@@ -113,7 +113,7 @@
 									d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
 								/>
 							</svg>
-							<span>support@updownco.in</span>
+							<span>support@updown-interactive.in</span>
 						</div>
 						<div class="flex items-center space-x-3 text-slate-300">
 							<svg
@@ -169,7 +169,7 @@
 								bind:value={email}
 								type="email"
 								placeholder="Enter your email"
-								class="flex-1 rounded-lg border border-slate-600 bg-slate-700 px-4 py-3 text-white placeholder-slate-400 outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+								class="flex-1 rounded-lg border border-slate-600 bg-slate-700 px-4 py-3 text-white placeholder-slate-400 transition-all outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
 							/>
 							<button
 								type="submit"
@@ -229,7 +229,7 @@
 				</ul>
 			</div>
 
-			<!-- Services Links -->
+			<!-- Services Links
 			<div class="space-y-6">
 				<h4 class="text-lg font-semibold text-white">Services</h4>
 				<ul class="space-y-3">
@@ -244,7 +244,7 @@
 						</li>
 					{/each}
 				</ul>
-			</div>
+			</div> -->
 		</div>
 
 		<!-- Social Media & Additional Info -->

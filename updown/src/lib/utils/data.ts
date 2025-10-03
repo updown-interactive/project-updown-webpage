@@ -44,51 +44,51 @@ export const allProjects: Project[] = [
     },
     {
         id: 2,
-        title: 'Zone',
-        subtitle: 'Event Creation & Social Experience',
-        category: 'Event & Social Management Platform',
+        title: 'OAK - One of a Kind',
+        subtitle: 'Showcasing Unique Talent & Creations',
+        category: 'Marketplace for One-of-a-Kind Items',
         description:
-            'An engaging event platform where users can create events, share playlists, albums, and locations, enhancing social experiences beyond RSVP.',
+            'A platform that empowers underrated creators by showcasing and selling their one-of-a-kind creations, helping them gain recognition and success.',
         longDescription:
-            'Zone extends beyond traditional event management by allowing hosts and guests to collaborate in real time. Attendees can contribute to shared music playlists, upload photos to a shared album, and coordinate locations. With smart RSVP, guest communication, and real-time updates, Zone brings both functionality and community together.',
+            'OAK is dedicated to discovering and promoting real talent within the company and beyond. Artists, crafters, and creators can list their unique products on the platform, connecting with an audience that values originality. OAK not only provides a marketplace but also supports creators in building their reputation, turning passion into tangible success, and giving the world a chance to see and appreciate their work.',
         features: [
-            'Event Creation & Management',
-            'Smart RSVP',
-            'Shared Music Playlist',
-            'Shared Photo Album',
-            'Location Sharing',
-            'Guest Communication',
-            'Automated Reminders'
+            'Marketplace for Unique Items',
+            'Creator Profiles & Portfolios',
+            'Direct Sales & Transactions',
+            'Community Feedback & Reviews',
+            'Featured Promotions',
+            'Creator Support & Growth Tools',
+            'Analytics for Performance'
         ],
-        techStack: ['Flutter', 'Dart', 'Golang'],
-        image: AppPng.zone,
+        techStack: ['SvelteKit', 'Golang', 'Typescript'],
+        image: AppPng.oak,
         color: 'from-purple-900 to-purple-700',
-        accentColor: 'purple',
+        accentColor: 'green',
         status: 'In Development',
         year: '2025'
     },
     {
         id: 3,
-        title: 'Project Cyber',
-        subtitle: 'On-Premise Security Ecosystem',
-        category: 'Cybersecurity Middleware',
+        title: 'WhiteSheet Website Builder',
+        subtitle: 'Dynamic Website Creation Made Simple',
+        category: 'Website Builder Platform',
         description:
-            'A local, on-premise security ecosystem that monitors servers, analyzes traffic, and provides real-time alerts for threats and anomalies.',
+            'A website builder that allows users to create beautiful, fully functional websites simply by providing inputs and selecting preferences.',
         longDescription:
-            'Project Cyber is designed for enterprises that prioritize control and privacy. Running entirely on-premise, it continuously monitors server ecosystems, detects attack patterns, and analyzes traffic flows in real time. With automated alerts, detailed logging, and AI-powered analytics, it strengthens security without depending on third-party cloud services.',
+            'WhiteSheet is designed to make website creation effortless for individuals and businesses. By taking user inputs such as content, style preferences, and layout choices, the platform generates elegant, responsive websites instantly. With a focus on simplicity, customization, and modern design standards, WhiteSheet enables anyone to build a professional web presence without coding knowledge.',
         features: [
-            'On-Premise Deployment',
-            'Real-time Threat Detection',
-            'Server Traffic Monitoring',
-            'Attack Pattern Analysis',
-            'Automated Alert System',
-            'Comprehensive Logging',
-            'Security Analytics'
+            'Input-based Dynamic Website Generation',
+            'Responsive & Modern Templates',
+            'Drag-and-Drop Editing',
+            'Customizable Layouts & Styles',
+            'SEO Optimization Tools',
+            'Export & Hosting Options',
+            'Real-time Preview & Updates'
         ],
-        techStack: ['Python', 'Machine Learning', 'Redis', 'PostgreSQL', 'Docker', 'Kubernetes'],
-        image: AppPng.cyber,
-        color: 'from-red-900 to-red-700',
-        accentColor: 'red',
+        techStack: ['Flutter', 'Dart', 'Golang'],
+        image: AppPng.whiteSheet,
+        color: 'from-blue-900 to-blue-700',
+        accentColor: 'blue',
         status: 'RnD',
         year: '2025'
     }
