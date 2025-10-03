@@ -298,7 +298,7 @@
 			<div class="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
 				<!-- Copyright -->
 				<div class="text-sm text-slate-400">
-					<p>&copy; {currentYear} Updown Co. All rights reserved.</p>
+					<p>&copy; {currentYear} Updown Interactive. All rights reserved.</p>
 				</div>
 
 				<!-- Legal Links -->
