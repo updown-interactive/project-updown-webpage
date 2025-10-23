@@ -44,19 +44,19 @@
 	const contactInfo: ContactInfo[] = [
 		{
 			title: 'Email',
-			value: 'hello@techcorp.com',
+			value: 'support@updown-interactive.in',
 			icon: '📧',
-			link: 'mailto:hello@techcorp.com'
+			link: 'mailto:support@updown-interactive.in'
 		},
 		{
 			title: 'Phone',
-			value: '+1 (555) 123-4567',
+			value: '+91 8075164393',
 			icon: '📞',
-			link: 'tel:+15551234567'
+			link: '+91 8075164393'
 		},
 		{
 			title: 'Address',
-			value: '123 Innovation Drive, Tech Valley, CA 94025',
+			value: 'Mahadevswaram, Kilimanoor, Thiruvananthapuram, Kerala, India',
 			icon: '📍'
 		},
 		{
@@ -186,11 +186,13 @@
 
 <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
 	<!-- Hero Section -->
-	<section class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-black to-gray-800  text-white">
+	<section
+		class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white"
+	>
 		<div class="absolute inset-0 bg-black/10"></div>
-		<div class="relative z-10 container mx-auto px-4 py-16 sm:py-24">
+		<div class="container relative z-10 mx-auto px-4 py-16 sm:py-24">
 			<div class="mx-auto max-w-3xl text-center">
-				<h1 class="mb-6 text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
+				<h1 class="mb-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
 					Let's Talk About <span class="text-blue-200">{formattedTopic}</span>
 				</h1>
 				<p class="mb-8 text-xl leading-relaxed text-blue-100 sm:text-2xl">
@@ -217,10 +219,10 @@
 
 		<!-- Animated background elements -->
 		<div
-			class="absolute top-10 left-10 h-20 w-20 animate-pulse rounded-full bg-blue-400/30 blur-xl"
+			class="absolute left-10 top-10 h-20 w-20 animate-pulse rounded-full bg-blue-400/30 blur-xl"
 		></div>
 		<div
-			class="absolute right-10 bottom-10 h-32 w-32 animate-pulse rounded-full bg-indigo-400/20 blur-2xl delay-1000"
+			class="absolute bottom-10 right-10 h-32 w-32 animate-pulse rounded-full bg-indigo-400/20 blur-2xl delay-1000"
 		></div>
 	</section>
 
@@ -273,7 +275,7 @@
 
 			<!-- Contact Form -->
 			<div
-				class="overflow-hidden rounded-3xl border border-white/50 bg-white/80 shadow-2xl backdrop-blur-sm lg:col-span-2"  
+				class="overflow-hidden rounded-3xl border border-white/50 bg-white/80 shadow-2xl backdrop-blur-sm lg:col-span-2"
 			>
 				<div class="bg-gradient-to-r from-gray-900 via-black to-gray-800 p-8">
 					<h3 class="text-center text-3xl font-bold text-white">Send us a Message</h3>
@@ -296,7 +298,7 @@
 								bind:value={name}
 								type="text"
 								placeholder="John Doe"
-								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 								class:border-red-300={error && !name.trim()}
 							/>
 						</div>
@@ -310,7 +312,7 @@
 								bind:value={email}
 								type="email"
 								placeholder="john@example.com"
-								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 								class:border-red-300={error && (!email.trim() || !validateEmail(email))}
 							/>
 						</div>
@@ -327,7 +329,7 @@
 								bind:value={phone}
 								type="tel"
 								placeholder="+91 1234567890"
-								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 								class:border-red-300={error && phone && !validatePhone(phone)}
 							/>
 						</div>
@@ -339,7 +341,7 @@
 							<select
 								id="subject"
 								bind:value={subject}
-								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+								class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 								class:border-red-300={error && !subject.trim()}
 							>
 								<option value="">Select a subject...</option>
@@ -365,10 +367,10 @@
 								rows="6"
 								placeholder="Tell us about your project, question, or how we can help you..."
 								maxlength={maxMessageLength}
-								class="w-full resize-none rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+								class="w-full resize-none rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 								class:border-red-300={error && (!message.trim() || message.trim().length < 10)}
 							></textarea>
-							<div class="absolute right-4 bottom-3 text-xs text-gray-400">
+							<div class="absolute bottom-3 right-4 text-xs text-gray-400">
 								{messageLength}/{maxMessageLength}
 							</div>
 						</div>

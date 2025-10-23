@@ -183,7 +183,9 @@
 					</svg>
 				</div>
 				<h3 class="mb-2 font-semibold text-gray-800">Visit Us</h3>
-				<p class="text-sm text-gray-600"></p>
+				<p class="text-sm text-gray-600">
+					Mahadevswaram, Kilimanoor, Thiruvananthapuram, Kerala, India
+				</p>
 			</div>
 		</div>
 
@@ -212,7 +214,7 @@
 							bind:value={name}
 							type="text"
 							placeholder="John Doe"
-							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 							class:border-red-300={error && !name.trim()}
 						/>
 					</div>
@@ -226,7 +228,7 @@
 							bind:value={email}
 							type="email"
 							placeholder="john@example.com"
-							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 							class:border-red-300={error && (!email.trim() || !validateEmail(email))}
 						/>
 					</div>
@@ -243,7 +245,7 @@
 							bind:value={phone}
 							type="tel"
 							placeholder="+1 (555) 123-4567"
-							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 							class:border-red-300={error && phone && !validatePhone(phone)}
 						/>
 					</div>
@@ -255,7 +257,7 @@
 						<select
 							id="subject"
 							bind:value={subject}
-							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+							class="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 							class:border-red-300={error && !subject.trim()}
 						>
 							<option value="">Select a subject...</option>
@@ -281,10 +283,10 @@
 							rows="6"
 							placeholder="Tell us about your project, question, or how we can help you..."
 							maxlength={maxMessageLength}
-							class="w-full resize-none rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 transition-all duration-200 outline-none hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+							class="w-full resize-none rounded-xl border border-gray-200 bg-gray-50/50 px-4 py-3 outline-none transition-all duration-200 hover:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
 							class:border-red-300={error && (!message.trim() || message.trim().length < 10)}
 						></textarea>
-						<div class="absolute right-4 bottom-3 text-xs text-gray-400">
+						<div class="absolute bottom-3 right-4 text-xs text-gray-400">
 							{messageLength}/{maxMessageLength}
 						</div>
 					</div>
