@@ -11,6 +11,8 @@ export class AppPng {
     static logoU = '/logo_u.png';
     static logoN = '/logo_n.png';
     static logoUN = '/un_logo.png';
+    static logoWhite = '/logo_white.png';
+    static logoBlack = '/logo_black.png';
     static oak = '/oak.png';
     static whiteSheet = '/white_sheet.png';
 }

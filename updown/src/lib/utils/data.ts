@@ -35,63 +35,63 @@ export const allProjects: Project[] = [
             'Customer Management',
             'Analytics Dashboard'
         ],
-        techStack: ['Svelte', 'Typescript', 'Rust', 'Golang'],
+        techStack: ['Flutter', 'Dart', 'Golang', 'Postgres'],
         image: AppPng.mangrove,
         color: 'from-emerald-900 to-emerald-700',
         accentColor: 'emerald',
         status: 'In Development',
         year: '2025'
     },
-    {
-        id: 2,
-        title: 'OAK - One of a Kind',
-        subtitle: 'Showcasing Unique Talent & Creations',
-        category: 'Marketplace for One-of-a-Kind Items',
-        description:
-            'A platform that empowers underrated creators by showcasing and selling their one-of-a-kind creations, helping them gain recognition and success.',
-        longDescription:
-            'OAK is dedicated to discovering and promoting real talent within the company and beyond. Artists, crafters, and creators can list their unique products on the platform, connecting with an audience that values originality. OAK not only provides a marketplace but also supports creators in building their reputation, turning passion into tangible success, and giving the world a chance to see and appreciate their work.',
-        features: [
-            'Marketplace for Unique Items',
-            'Creator Profiles & Portfolios',
-            'Direct Sales & Transactions',
-            'Community Feedback & Reviews',
-            'Featured Promotions',
-            'Creator Support & Growth Tools',
-            'Analytics for Performance'
-        ],
-        techStack: ['SvelteKit', 'Golang', 'Typescript'],
-        image: AppPng.oak,
-        color: 'from-purple-900 to-purple-700',
-        accentColor: 'green',
-        status: 'In Development',
-        year: '2025'
-    },
-    {
-        id: 3,
-        title: 'WhiteSheet Website Builder',
-        subtitle: 'Dynamic Website Creation Made Simple',
-        category: 'Website Builder Platform',
-        description:
-            'A website builder that allows users to create beautiful, fully functional websites simply by providing inputs and selecting preferences.',
-        longDescription:
-            'WhiteSheet is designed to make website creation effortless for individuals and businesses. By taking user inputs such as content, style preferences, and layout choices, the platform generates elegant, responsive websites instantly. With a focus on simplicity, customization, and modern design standards, WhiteSheet enables anyone to build a professional web presence without coding knowledge.',
-        features: [
-            'Input-based Dynamic Website Generation',
-            'Responsive & Modern Templates',
-            'Drag-and-Drop Editing',
-            'Customizable Layouts & Styles',
-            'SEO Optimization Tools',
-            'Export & Hosting Options',
-            'Real-time Preview & Updates'
-        ],
-        techStack: ['Flutter', 'Dart', 'Golang'],
-        image: AppPng.whiteSheet,
-        color: 'from-blue-900 to-blue-700',
-        accentColor: 'blue',
-        status: 'RnD',
-        year: '2025'
-    }
+    // {
+    //     id: 2,
+    //     title: 'OAK - One of a Kind',
+    //     subtitle: 'Showcasing Unique Talent & Creations',
+    //     category: 'Marketplace for One-of-a-Kind Items',
+    //     description:
+    //         'A platform that empowers underrated creators by showcasing and selling their one-of-a-kind creations, helping them gain recognition and success.',
+    //     longDescription:
+    //         'OAK is dedicated to discovering and promoting real talent within the company and beyond. Artists, crafters, and creators can list their unique products on the platform, connecting with an audience that values originality. OAK not only provides a marketplace but also supports creators in building their reputation, turning passion into tangible success, and giving the world a chance to see and appreciate their work.',
+    //     features: [
+    //         'Marketplace for Unique Items',
+    //         'Creator Profiles & Portfolios',
+    //         'Direct Sales & Transactions',
+    //         'Community Feedback & Reviews',
+    //         'Featured Promotions',
+    //         'Creator Support & Growth Tools',
+    //         'Analytics for Performance'
+    //     ],
+    //     techStack: ['SvelteKit', 'Golang', 'Typescript'],
+    //     image: AppPng.oak,
+    //     color: 'from-purple-900 to-purple-700',
+    //     accentColor: 'green',
+    //     status: 'In Development',
+    //     year: '2025'
+    // },
+    // {
+    //     id: 3,
+    //     title: 'WhiteSheet Website Builder',
+    //     subtitle: 'Dynamic Website Creation Made Simple',
+    //     category: 'Website Builder Platform',
+    //     description:
+    //         'A website builder that allows users to create beautiful, fully functional websites simply by providing inputs and selecting preferences.',
+    //     longDescription:
+    //         'WhiteSheet is designed to make website creation effortless for individuals and businesses. By taking user inputs such as content, style preferences, and layout choices, the platform generates elegant, responsive websites instantly. With a focus on simplicity, customization, and modern design standards, WhiteSheet enables anyone to build a professional web presence without coding knowledge.',
+    //     features: [
+    //         'Input-based Dynamic Website Generation',
+    //         'Responsive & Modern Templates',
+    //         'Drag-and-Drop Editing',
+    //         'Customizable Layouts & Styles',
+    //         'SEO Optimization Tools',
+    //         'Export & Hosting Options',
+    //         'Real-time Preview & Updates'
+    //     ],
+    //     techStack: ['Flutter', 'Dart', 'Golang'],
+    //     image: AppPng.whiteSheet,
+    //     color: 'from-blue-900 to-blue-700',
+    //     accentColor: 'blue',
+    //     status: 'RnD',
+    //     year: '2025'
+    // }
 ];
 export interface Service {
     id: number;

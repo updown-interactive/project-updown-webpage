@@ -139,7 +139,7 @@
 					</svg>
 				</div>
 				<h3 class="mb-2 font-semibold text-gray-800">Email Us</h3>
-				<p class="text-sm text-gray-600">support@updown-interactive.in</p>
+				<p class="text-sm text-gray-600">admin@updown-interactive.in</p>
 			</div>
 
 			<div

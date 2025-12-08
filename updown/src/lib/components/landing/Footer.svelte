@@ -71,7 +71,7 @@
 	];
 </script>
 
-<footer class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
+<footer class="bg-black text-white">
 	<!-- Main Footer Content -->
 	<div class="mx-auto max-w-7xl px-6 py-16">
 		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -81,20 +81,19 @@
 				<div class="space-y-6">
 					<div class="flex items-center space-x-3">
 						<!-- Company Logo -->
-						<img src={AppPng.logoUN} alt="logo" class="h-20 w-20" />
+						<img src={AppPng.logoWhite} alt="logo" class="h-20 w-20" />
 						<div>
 							<h3
-								class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-2xl font-bold text-transparent"
+								class="text-white text-2xl font-bold "
 							>
-								Updown Interactive
+								Updown Interactive Private Limited
 							</h3>
 							<p class="text-sm text-slate-400">Elevating Your Digital Presence</p>
 						</div>
 					</div>
 
 					<p class="max-w-md leading-relaxed text-slate-300">
-						We help businesses scale up and optimize their digital infrastructure with cutting-edge
-						technology solutions. From web development to digital strategy, we've got you covered.
+						
 					</p>
 
 					<!-- Contact Info -->
@@ -113,7 +112,7 @@
 									d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
 								/>
 							</svg>
-							<span>support@updown-interactive.in</span>
+							<span>admin@updown-interactive.in</span>
 						</div>
 						<div class="flex items-center space-x-3 text-slate-300">
 							<svg

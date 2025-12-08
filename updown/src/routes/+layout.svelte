@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import favicon from '$lib/assets/favicon.svg';
 	let { children } = $props();
 </script>
 
@@ -11,6 +12,7 @@
 	/>
 
 	<!-- SEO / Social -->
+	<link rel="icon" href={favicon} />
 	<meta property="og:title" content="Updown Interactive" />
 	<meta property="og:description" content="In freedom we create. in creativity we are free" />
 	<meta property="og:url" content="https://www.updown-interactive.in" />

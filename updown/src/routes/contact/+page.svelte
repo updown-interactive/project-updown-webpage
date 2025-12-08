@@ -44,9 +44,9 @@
 	const contactInfo: ContactInfo[] = [
 		{
 			title: 'Email',
-			value: 'support@updown-interactive.in',
+			value: 'admin@updown-interactive.in',
 			icon: '📧',
-			link: 'mailto:support@updown-interactive.in'
+			link: 'mailto:admin@updown-interactive.in'
 		},
 		{
 			title: 'Phone',
