@@ -1,0 +1,1 @@
+export const logoOrange = "/logo_orange.png"
