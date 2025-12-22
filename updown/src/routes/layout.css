@@ -4,20 +4,27 @@
 
 
 :root {
-    --surfaceColor: #070707;
+    --surfaceColor: #EAEAEA;
     --surfacePrimaryColor: #EAEAEA;
-    --onSurface: #EAEAEA;
+    --onSurface: #070707;
     --onSurfacePrimary: #000000;
-    --borderColor: #E1E4E8;
+    --borderColor: #0909095f;
     --accentColor: #F79107;
     --onAccentColor: #FFFFFF;
 }
 
-html, 
+html,
 body {
     @apply bg-[var(--surfaceColor)] text-[var(--onSurface)];
 }
 
 .inverseSurface {
     @apply bg-[var(--surfacePrimaryColor)] text-[var(--onSurfacePrimary)];
+}
+
+
+/* Ensure app content stays above the grid */
+body>* {
+    position: relative;
+    z-index: 1;
 }

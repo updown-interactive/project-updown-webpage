@@ -1,234 +1,275 @@
 <script>
-	import { logoOrange } from "$lib";
-	import { onMount, onDestroy } from "svelte";
-	import { browser } from "$app/environment";
+    import { onMount, onDestroy } from "svelte";
 
-	let animate = false;
-	let showHero = false;
-	let scrollY = 0;
+    // Text Configuration
+    const line1 = "UP".split("");
+    const line2 = "DOWN".split("");
+    const footer = "INTERACTIVE".split("");
 
-	function handleScroll() {
-		scrollY = window.scrollY;
-	}
+    // State for auto-animation
+    let activeIndex = -1; // -1 means no auto-animation active
+    let isInteracting = false;
+    let autoInterval;
 
-	onMount(() => {
-		setTimeout(() => (animate = true), 2000);
-		setTimeout(() => (showHero = true), 2500);
+    // --- AUTO ANIMATION (The "Wave") ---
+    // This plays a piano-like scale across the letters when idle
+    const startAutoPlay = () => {
+        let tick = 0;
+        const allCharsLength = line1.length + line2.length;
+        
+        autoInterval = setInterval(() => {
+            if (!isInteracting) {
+                // Cycle through 0 to length
+                activeIndex = tick % allCharsLength;
+                tick++;
+            } else {
+                activeIndex = -1; // Reset if user is in control
+            }
+        }, 1000); // Speed of the wave
+    };
 
-		if (browser) {
-			window.addEventListener("scroll", handleScroll);
-		}
+    const stopAutoPlay = () => {
+        clearInterval(autoInterval);
+        activeIndex = -1;
+    };
 
-     
+    // --- HANDLERS ---
+    const handleInteractionStart = () => { isInteracting = true; };
+    const handleInteractionEnd = () => { isInteracting = false; };
 
-	});
+    onMount(() => {
+        startAutoPlay();
+    });
 
-	onDestroy(() => {
-		if (browser) {
-			window.removeEventListener("scroll", handleScroll);
-		}
-	});
-
-
+    onDestroy(() => {
+        stopAutoPlay();
+    });
 </script>
 
-<!-- LOGO -->
-<div class="logo-container" class:animate>
-	<img src={logoOrange} alt="Main Logo" />
+<div class="logo-container">
+    <img src="/logo_orange.png" alt="Logo" class="logo" />
 </div>
 
-<!-- PARTICLES -->
-<div class="particles">
-	{#each Array(30) as _, i}
-		<span
-			style="
-				left: {Math.random() * 100}%;
-				top: {Math.random() * 100}%;
-				animation-delay: {Math.random() * 10}s;
-				animation-duration: {14 + Math.random() * 10}s;
-			"
-		></span>
-	{/each}
-</div>
-
-<!-- COMETS -->
-<div class="comets">
-	{#each Array(6) as _}
-		<div class="comet"></div>
-	{/each}
-</div>
-
-<!-- 👽 FLOATING ALIEN -->
-<div class="alien">
-	🛸
-</div>
-
-<!-- HERO -->
-<section
+<section 
+    class="hero" 
     id="home"
-	class="hero-container {showHero ? 'showHero' : ''}"
-	style="transform: translateY({scrollY * 0.25}px);"
+    on:mouseenter={handleInteractionStart}
+    on:mousemove={handleInteractionStart}
+    on:mouseleave={handleInteractionEnd}
+    on:touchstart={handleInteractionStart}
+    on:touchend={handleInteractionEnd}
+	aria-label="Hero section with interactive Up Down Interactive text"
 >
-	<h1 class="hero-text">
-		<span>UPDOWN</span><br />
-		<span>INTERACTIVE</span>
-	</h1>
+    
+    <div class="bg-grid"></div>
+
+    <div class="center-stage">
+        
+        <div class="word-row">
+            {#each line1 as char, i}
+                <span 
+                    class="char big" 
+                    class:auto-active={activeIndex === i}
+                >
+                    {char}
+                </span>
+            {/each}
+        </div>
+
+        <div class="word-row">
+            {#each line2 as char, i}
+                <span 
+                    class="char big"
+                    class:auto-active={activeIndex === (i + line1.length)}
+                >
+                    {char}
+                </span>
+            {/each}
+        </div>
+
+        <div class="footer-row">
+            {#each footer as char}
+                <span class="char small">{char}</span>
+            {/each}
+        </div>
+
+    </div>
+
+    <div class="scroll-hint">
+        <span class="dot"></span> EST 2025
+    </div>
+
 </section>
 
 <style>
-/* ---------------- LOGO ---------------- */
-.logo-container {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transition: all 1s ease-in-out;
-	z-index: 1000;
-}
+    :global(body) {
+        margin: 0;
+        --primary: #FE8D07; /* YOUR BRAND COLOR */
+        color: #000;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
 
-.logo-container.animate {
-	top: 20px;
-	left: 20px;
-	transform: translate(0, 0);
-}
+    .logo-container {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 100;
+    }
+    .logo { width: 50px; }
 
-.logo-container img {
-	width: 120px;
-	transition: width 1s ease-in-out;
-}
+    /* === HERO LAYOUT === */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+		
+    }
+    .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(#f4f4f4 1px, transparent 1px),
+            linear-gradient(90deg, #f4f4f4 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+		   width: 100%;
+        min-height: 100vh; 
+		background-color: #ffffff;
+    }
+	
 
-.logo-container.animate img {
-	width: 40px;
-}
+    /* .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(#f4f4f4 1px, transparent 1px),
+            linear-gradient(90deg, #f4f4f4 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.6;
+        pointer-events: none;
+    } */
 
-/* ---------------- HERO ---------------- */
-.hero-container {
-	height: 100vh;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	transition: opacity 1s ease;
-	will-change: transform;
-	position: relative;
-	z-index: 3;
-}
+    .center-stage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        z-index: 10;
+        /* Slight perspective for the 3D lift effect */
+        perspective: 1000px;
+		
+    }
 
-.hero-container.showHero {
-	opacity: 1;
-}
+    .word-row {
+        display: flex;
+        line-height: 0.85; /* Tight vertical stacking */
+        overflow: visible;
+    }
+/* === CHARACTER STYLING: THE "CUT-OUT" === */
+    .char {
+        display: inline-block;
+        font-weight: 900; /* Extra bold for better negative space */
+        cursor: default;
+        position: relative;
+        
+        /* THE VISUAL REPLACEMENT FOR STROKE */
+        /* We make the letter slightly darker than the white bg to show the shape */
+        color: #5e5e5e; 
+        
+        /* Subtle inner-shadow makes it look like it's carved into the grid */
+        text-shadow: 
+            inset 1px 1px 2px rgba(0,0,0,0.1),
+            -1px -1px 0px rgba(255,255,255,0.8);
 
-.hero-text {
-	font-weight: 900;
-	text-align: start;
-	line-height: 0.88;
-	color: white;
+        transform: translateY(0);
+        transition: 
+            transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), 
+            color 0.4s ease, 
+            text-shadow 0.4s ease,
+            filter 0.4s ease;
+    }
 
-	font-size: clamp(4rem, 12vw, 22rem);
-	letter-spacing: -0.05em;
+    /* SIZE VARIANTS */
+    .char.big {
+        font-size: clamp(6rem, 25vw, 25rem);
+        letter-spacing: -0.06em; /* Tighter for negative space impact */
+        padding: 0 2px;
+    }
 
-	animation: floatText 8s ease-in-out infinite;
-	filter: drop-shadow(0 40px 120px rgba(255, 120, 0, 0.18));
-}
+    .char.small {
+        font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+        margin-top: 3rem;
+        letter-spacing: 1em;
+        font-weight: 700;
+        color: #2e2e2e;
+    }
 
-@keyframes floatText {
-	0% { transform: translateY(0); }
-	50% { transform: translateY(-18px); }
-	100% { transform: translateY(0); }
-}
+    /* === THE HOVER / ACTIVE STATE: THE "REVEAL" === */
+    .char:hover, .char.auto-active {
+        /* 1. Becomes the Solid Primary Color */
+        color: var(--primary);
+        
+        /* 2. Swaps the "carved-in" look for a "floating-above" look */
+        text-shadow: 
+            0px 10px 20px rgba(254, 141, 7, 0.3),
+            0px 0px 40px rgba(254, 141, 7, 0.1);
+        
+        /* 3. Physical Pop-Up */
+        transform: translateY(-30px) scale(1.08);
+        
+        /* 4. Brightness boost */
+        filter: brightness(1.1);
+        
+        z-index: 20;
+    }
 
-/* ---------------- PARTICLES ---------------- */
-.particles {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	z-index: 0;
-}
+    /* Small text specific hover */
+    .char.small:hover {
+        transform: translateY(-10px);
+        color: #000; /* Footer text turns black instead of orange for classiness */
+    }
 
-.particles span {
-	position: absolute;
-	width: 3px;
-	height: 3px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.4);
-	animation: float infinite ease-in-out;
-}
+    /* === FOOTER HINT === */
+    .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        font-family: monospace;
+        color: #999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
 
-@keyframes float {
-	0% { transform: translate(0, 0); opacity: 0.2; }
-	50% { transform: translate(30px, -50px); opacity: 0.8; }
-	100% { transform: translate(0, 0); opacity: 0.2; }
-}
+    .dot {
+        width: 6px;
+        height: 6px;
+        background: var(--primary);
+        border-radius: 50%;
+        animation: blink 3s infinite;
+    }
+    
+    @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-/* ---------------- COMETS ---------------- */
-.comets {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	z-index: 1;
-}
 
-.comet {
-	position: absolute;
-	top: -10%;
-	left: -20%;
-	width: 160px;
-	height: 2px;
-	background: linear-gradient(
-		90deg,
-		rgba(255,255,255,0),
-		rgba(255,255,255,0.9),
-		rgba(255,255,255,0)
-	);
-	filter: blur(1px);
-	opacity: 0.7;
-	animation: comet 8s linear infinite;
-}
+    /* === MOBILE OPTIMIZATION === */
+    @media (max-width: 768px) {
+        .logo-container { top: 1.5rem; left: 1.5rem; }
+        
+        .char.big {
+            font-size: 20vw;
+            -webkit-text-stroke: 1px #ccc;
+        }
 
-.comet:nth-child(1) { animation-delay: 0s; top: 20%; }
-.comet:nth-child(2) { animation-delay: 2s; top: 40%; }
-.comet:nth-child(3) { animation-delay: 4s; top: 60%; }
-.comet:nth-child(4) { animation-delay: 6s; top: 80%; }
-.comet:nth-child(5) { animation-delay: 1s; top: 30%; }
-.comet:nth-child(6) { animation-delay: 3s; top: 70%; }
-
-@keyframes comet {
-	0% {
-		transform: translateX(-200px) translateY(0) rotate(20deg);
-		opacity: 0;
-	}
-	10% { opacity: 1; }
-	100% {
-		transform: translateX(140vw) translateY(40vh) rotate(20deg);
-		opacity: 0;
-	}
-}
-
-/* ---------------- 👽 ALIEN ---------------- */
-.alien {
-	position: absolute;
-	left: 15%;
-	top: 25%;
-	font-size: 2.5rem;
-	opacity: 0.6;
-	filter: blur(0.3px);
-
-	z-index: 2;
-	pointer-events: none;
-
-	animation: alienFloat 18s ease-in-out infinite;
-}
-
-@keyframes alienFloat {
-	0% {
-		transform: translate(0, 0) rotate(0deg);
-	}
-	50% {
-		transform: translate(60px, -80px) rotate(12deg);
-	}
-	100% {
-		transform: translate(0, 0) rotate(0deg);
-	}
-}
+        /* On mobile, reduce the jump height so it doesn't look glitchy */
+        .char:hover, .char.auto-active {
+            transform: translateY(-10px);
+        }
+    }
 </style>
