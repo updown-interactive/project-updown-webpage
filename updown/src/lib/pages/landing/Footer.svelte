@@ -51,7 +51,7 @@
             <div class="logo-mark">
                 <img src="/logo_orange.png" alt="Logo" class="mini-logo" />
             </div>
-            <p class="location">THIRUVANTHAPURAM, IN // 8.772741° N, 76.881240° E</p>
+            <p class="location">THIRUVANANTHAPURAM, IN // 8.772741° N, 76.881240° E</p>
         </div>
     </div>
 </footer>
