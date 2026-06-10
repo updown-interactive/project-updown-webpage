@@ -1,11 +1,12 @@
 <script>
 	const works = [
 		{
-			name: 'Billy',
-			logo: '/assets/billy.png',
-			eyebrow: 'SMART BILLING SYSTEM',
-			tagline: 'Fast, reliable billing for everyday businesses',
-			footer: 'BILLY IS BUILT FOR SMALL BUSINESSES.',
+			name: 'uBilly',
+			logo: '/assets/ubilly.png',
+			eyebrow: 'FREE BILLING SOFTWARE',
+			tagline: 'Free billing software for everyday businesses',
+			footer: 'uBILLY IS BUILT FOR SMALL BUSINESSES.',
+			link: 'https://ubilly.com',
 			features: [
 				{
 					id: '01',
@@ -33,40 +34,75 @@
 				}
 			]
 		},
-
 		{
-			name: 'InMyCity',
-			logo: '/assets/inmycity.png',
-			eyebrow: 'EVENT DISCOVERY PLATFORM',
-			tagline: 'Never miss what’s happening in your city',
-			footer: 'INMYCITY HELPS YOU DISCOVER THE CITY.',
+			name: 'Mash',
+			logo: '/assets/mash.png',
+			eyebrow: 'PERSONALIZED STUDY APP',
+			tagline: 'Learn smarter, build study habits, and master subjects',
+			footer: 'MASH GUIDES YOUR ACADEMIC JOURNEY.',
+			link: 'https://mash-study.app',
 			features: [
 				{
 					id: '01',
-					title: 'LIVE EVENTS',
-					tagline: 'WHAT’S HAPPENING NOW',
-					desc: 'Discover concerts, festivals, workshops, meetups, and experiences happening around you in real time.'
+					title: 'SMART SCHEDULING',
+					tagline: 'STUDY PLANNER',
+					desc: 'Personalized calendars and study sessions optimized for your targets, exams, and daily routines.'
 				},
 				{
 					id: '02',
-					title: 'SMART DISCOVERY',
-					tagline: 'EVENTS YOU’LL LOVE',
-					desc: 'Personalized recommendations based on your interests, location, and the events your friends attend.'
+					title: 'SUBJECT ANALYTICS',
+					tagline: 'TRACK YOUR PROGRESS',
+					desc: 'Deep visual progress tracking, mock test results, and subject strengths identified automatically.'
 				},
 				{
 					id: '03',
-					title: 'INSTANT BOOKING',
-					tagline: 'RESERVE IN SECONDS',
-					desc: 'Secure tickets and reserve spots instantly without complicated checkout flows.'
+					title: 'COLLABORATIVE HUBS',
+					tagline: 'STUDY TOGETHER',
+					desc: 'Private shared study rooms, instant peer-to-peer discussion hubs, and collaborative notes.'
 				},
 				{
 					id: '04',
-					title: 'CITY PULSE',
-					tagline: 'DON’T MISS OUT',
-					desc: 'Stay updated with trending events, hidden experiences, and local gatherings you didn’t know existed.'
+					title: 'EXPERT GUIDANCE',
+					tagline: '24/7 AI TUTORS',
+					desc: 'Immediate conceptual answers, step-by-step explanations, and real-time guidance whenever you get stuck.'
 				}
 			]
 		}
+
+		// {
+		// 	name: 'InMyCity',
+		// 	logo: '/assets/inmycity.png',
+		// 	eyebrow: 'EVENT DISCOVERY PLATFORM',
+		// 	tagline: 'Never miss what’s happening in your city',
+		// 	footer: 'INMYCITY HELPS YOU DISCOVER THE CITY.',
+		// 	link: 'https://inmycity.today',
+		// 	features: [
+		// 		{
+		// 			id: '01',
+		// 			title: 'LIVE EVENTS',
+		// 			tagline: 'WHAT’S HAPPENING NOW',
+		// 			desc: 'Discover concerts, festivals, workshops, meetups, and experiences happening around you in real time.'
+		// 		},
+		// 		{
+		// 			id: '02',
+		// 			title: 'SMART DISCOVERY',
+		// 			tagline: 'EVENTS YOU’LL LOVE',
+		// 			desc: 'Personalized recommendations based on your interests, location, and the events your friends attend.'
+		// 		},
+		// 		{
+		// 			id: '03',
+		// 			title: 'INSTANT BOOKING',
+		// 			tagline: 'RESERVE IN SECONDS',
+		// 			desc: 'Secure tickets and reserve spots instantly without complicated checkout flows.'
+		// 		},
+		// 		{
+		// 			id: '04',
+		// 			title: 'CITY PULSE',
+		// 			tagline: 'DON’T MISS OUT',
+		// 			desc: 'Stay updated with trending events, hidden experiences, and local gatherings you didn’t know existed.'
+		// 		}
+		// 	]
+		// }
 	];
 </script>
 
@@ -82,12 +118,40 @@
 				</div>
 				<div class="title-logo-row">
 					<h2 class="project-title">{work.name}</h2>
-					<div class="logo-badge">
-						<div class="logo-glow"></div>
-						<img src={work.logo} alt="{work.name} logo" class="project-logo" />
-					</div>
+					{#if work.link}
+						<a href={work.link} target="_blank" rel="noopener noreferrer" class="logo-badge">
+							<div class="logo-glow"></div>
+							<img src={work.logo} alt="{work.name} logo" class="project-logo" />
+						</a>
+					{:else}
+						<div class="logo-badge">
+							<div class="logo-glow"></div>
+							<img src={work.logo} alt="{work.name} logo" class="project-logo" />
+						</div>
+					{/if}
 				</div>
-				<p class="project-desc">{work.tagline}</p>
+				<div class="desc-link-row">
+					<p class="project-desc">{work.tagline}</p>
+					{#if work.link}
+						<a href={work.link} target="_blank" rel="noopener noreferrer" class="project-link">
+							<span>Visit Website</span>
+							<svg
+								viewBox="0 0 24 24"
+								width="16"
+								height="16"
+								stroke="currentColor"
+								stroke-width="2.5"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="arrow-icon"
+							>
+								<line x1="7" y1="17" x2="17" y2="7"></line>
+								<polyline points="7 7 17 7 17 17"></polyline>
+							</svg>
+						</a>
+					{/if}
+				</div>
 			</header>
 
 			<div class="feature-grid">
@@ -198,17 +262,17 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		
+
 		background: rgba(255, 255, 255, 0.03);
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
 		border: 1px solid rgba(0, 0, 0, 0.05);
 		border-radius: 100px;
-		
-		box-shadow: 
+
+		box-shadow:
 			0 4px 24px -1px rgba(0, 0, 0, 0.05),
 			inset 0 0 20px rgba(255, 255, 255, 0.5);
-			
+
 		transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 		animation: float 6s ease-in-out infinite;
 	}
@@ -238,7 +302,7 @@
 		background: rgba(255, 255, 255, 0.8);
 		border-color: rgba(254, 141, 7, 0.2);
 		transform: scale(1.08) translateY(-10px) rotate(2deg);
-		box-shadow: 
+		box-shadow:
 			0 20px 40px -10px rgba(254, 141, 7, 0.15),
 			inset 0 0 20px rgba(255, 255, 255, 1);
 	}
@@ -253,8 +317,13 @@
 	}
 
 	@keyframes float {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-10px); }
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
 	}
 
 	.project-desc {
@@ -262,6 +331,59 @@
 		font-size: 1.25rem;
 		line-height: 1.6;
 		color: #666;
+		margin: 0;
+	}
+
+	.desc-link-row {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.25rem;
+	}
+
+	.project-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		color: #222;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 0.9rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
+		position: relative;
+		padding-bottom: 2px;
+	}
+
+	.project-link::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--primary);
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+
+	.project-link:hover::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+
+	.project-link:hover {
+		color: var(--primary);
+	}
+
+	.arrow-icon {
+		transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+
+	.project-link:hover .arrow-icon {
+		transform: translate(3px, -3px);
 	}
 
 	/* === FEATURE GRID === */
